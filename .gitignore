@@ -47,6 +47,7 @@ nbdist/
 # VS Code
 .vscode/
 *.code-workspace
+.claude/
 
 # Maven
 target/
@@ -79,6 +80,10 @@ Desktop.ini
 
 # Linux
 *~
+.claude
+.claude/*
+
+
 
 # Temporary files
 *.tmp
