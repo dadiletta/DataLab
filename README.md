@@ -26,7 +26,8 @@ Before working with static CSV files, see how data can be fetched live from the 
 **A. Run Welcome01.java**
 - This program fetches **current weather data** from NOAA weather stations
 - Notice it connects to a URL and pulls live information
-- The Sinbad library handles the connection and parsing for you
+- The `noaa` folder handles the connection and parsing for you. It is plain Java
+  you can read, but nothing in this lab asks you to write anything like it
 
 **B. Modify Welcome02_Object.java**
 - Currently compares 3 airport weather stations (KATL, KSAV, KSEA)
@@ -35,7 +36,8 @@ Before working with static CSV files, see how data can be fetched live from the 
 - Run and see **your local weather** compared to others
 
 **C. Explore Welcome03_List.java**
-- This fetches a list of ALL weather stations in the US
+- This fetches the list of every station the Weather Service reports on (the US,
+  its territories, and some of Canada) and makes a `WeatherStation` from each one
 - Enter a state abbreviation when prompted
 - Notice how it:
   - Filters stations by state (ArrayList traversal)
@@ -123,10 +125,11 @@ Format: name,calories,fiber,carbohydrates,cups
 
 ### Understanding the Task
 
-In Activity 1, the Sinbad library automatically:
-- Connected to data sources
+In Activity 1, the `noaa` folder:
+- Connected to the data source
 - Parsed the format
-- Created objects for you
+
+and the Welcome files turned each record into an object with a constructor call.
 
 Now you'll do this **manually** to understand what's happening behind the scenes.
 
@@ -323,11 +326,11 @@ When you complete all three methods in `CerealRunner3.java`, run the main method
 **Using command line:**
 ```bash
 # Compile
-javac -d bin -cp lib/sinbad.jar src/Welcome01.java
+javac -d bin src/noaa/Feed.java src/Welcome01.java
 javac -d bin src/Cereal.java src/CerealRunner2.java
 
 # Run
-java -cp bin:lib/sinbad.jar Welcome01
+java -cp bin Welcome01
 java -cp bin CerealRunner2
 ```
 
@@ -337,9 +340,8 @@ java -cp bin CerealRunner2
 
 ## Data Source Attribution
 
-- Weather data: NOAA via weather.gov
+- Weather data: NOAA's National Weather Service, [forecast.weather.gov](https://forecast.weather.gov/xml/current_obs/)
 - Cereal data: [Kaggle - 80 Cereals Dataset](https://www.kaggle.com/datasets/crawford/80-cereals)
-- Sinbad library: [Berry College Sinbad Project](https://berry-cs.github.io/sinbad/)
 
 ---
 

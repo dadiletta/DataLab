@@ -1,0 +1,37 @@
+{
+  // src/ is the source root, so `package noaa;` in src/noaa/ is found. Without
+  // it the Java extension can guess the project root instead, and every
+  // Welcome file's `import noaa.Feed;` goes red.
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "bin",
+
+  // Welcome03_List asks for a state. VS Code's internal debug console is
+  // read-only, so a student running there watches the prompt print and then
+  // cannot answer it. The integrated terminal takes input.
+  "java.debug.settings.console": "integratedTerminal",
+
+  // Rebuild without asking. The alternative is a "project configuration is out
+  // of date" prompt that a beginner reads as an error.
+  "java.configuration.updateBuildConfiguration": "automatic",
+
+  // CerealRunner3 cannot compile until the student has written Cereal, and VS
+  // Code builds the whole folder before running any one file. Without this,
+  // every warm-up run on day one stops at a "build failed, proceed?" prompt.
+  "java.debug.settings.onBuildFailureProceed": true,
+
+  // Don't ask a fifteen-year-old to make a telemetry decision on their first
+  // day in the editor.
+  "redhat.telemetry.enabled": false,
+
+  "liveshare.showInStatusBar": "always",
+
+  // Nobody joins without the student saying yes, every time. Live Share's own
+  // default lets a signed-in guest join without being approved.
+  "liveshare.guestApprovalRequired": true,
+  "liveshare.publishWorkspaceInfo": false,
+
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/*.class": true
+  }
+}

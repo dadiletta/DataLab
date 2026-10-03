@@ -45,7 +45,9 @@ nbdist/
 .nb-gradle/
 
 # VS Code
-.vscode/
+# .vscode/ IS DELIBERATELY NOT IGNORED. It names src/ as the source root (which
+# `package noaa;` needs) and sends Welcome03_List's prompt to a terminal that
+# takes input. Ignored, it would be absent from every copy a student makes.
 *.code-workspace
 .claude/
 

@@ -1,0 +1,13 @@
+{
+  // VS Code offers these the first time the folder is opened. Both are already
+  // installed if Unit 0's kit was followed — this is what covers the student
+  // who skipped a step, or who is on a different machine than they were in
+  // September.
+  //
+  // Live Server is NOT here, unlike the web starters: there is no page to
+  // serve. Java's equivalent of "show me your screen" is Live Share alone.
+  "recommendations": [
+    "vscjava.vscode-java-pack",
+    "ms-vsliveshare.vsliveshare"
+  ]
+}

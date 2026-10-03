@@ -1,13 +1,16 @@
-import core.data.*;
+import noaa.Feed;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Welcome03_List {
    public static void main(String[] args) {
-      DataSource ds = DataSource.connect("http://weather.gov/xml/current_obs/index.xml").load();
-      ArrayList<WeatherStation> allstns = ds.fetchList("WeatherStation", "station/station_name", 
-             "station/station_id", "station/state",
-             "station/latitude", "station/longitude");
+      Feed index = Feed.load("https://forecast.weather.gov/xml/current_obs/index.xml");
+      ArrayList<WeatherStation> allstns = new ArrayList<WeatherStation>();
+      for (Feed stn : index.getAll("station")) {
+         allstns.add(new WeatherStation(stn.getString("station_name"), stn.getString("station_id"),
+                                        stn.getString("state"), stn.getDouble("latitude"),
+                                        stn.getDouble("longitude")));
+      }
       System.out.println("Total stations: " + allstns.size());
       
       Scanner sc = new Scanner(System.in);
