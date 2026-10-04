@@ -342,6 +342,7 @@ java -cp bin CerealRunner2
 
 - Weather data: NOAA's National Weather Service, [forecast.weather.gov](https://forecast.weather.gov/xml/current_obs/)
 - Cereal data: [Kaggle - 80 Cereals Dataset](https://www.kaggle.com/datasets/crawford/80-cereals)
+- Warm-ups: `Welcome01`, `Welcome02_Object`, `Welcome03_List` and `WeatherStation` are adapted from the Java tutorials of the [Sinbad project](https://berry-cs.github.io/sinbad/) (Berry College). The lab no longer uses the Sinbad library itself.
 
 ---
 
